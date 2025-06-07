@@ -149,6 +149,7 @@ footer {
   font-size: large;
   border-radius: 10% 10% 0 0;
   position: absolute;
+  animation: ani 1s forwards;
 }
 
 .footer-rows {
@@ -184,4 +185,95 @@ footer {
 
 .footer-text {
   padding-top: 5%;
+}
+
+@keyframes ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes an2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav {
+    height: auto;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+    padding-block: 5px;
+  }
+  .nav-text {
+    margin: 0;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+    width: 35%;
+    text-wrap: nowrap;
+  }
+
+  .content1, .content2, .content3 {
+    font-size: 4vw;
+  }
+
+  .content1-1,
+  .content1-2,
+  .content1-3 {
+    gap: 25px;
+  }
+
+  .content1-1 h3,
+  .content1-2 h3,
+  .content1-3 h3{
+    text-align: start;
+    font-size: 4vw;
+  }
+
+  .content2-1,
+  .content2-2{
+    gap: 25px;
+  }
+
+  .content2-1 h3,
+  .content2-2 h3{
+    text-align: start;
+    font-size: 4vw;
+  }
+
+  .content3-1{
+    gap: 25px;
+  }
+
+  .content3-1 h3{
+    text-align: start;
+    font-size: 4vw;
+  }
+
+  footer {
+    font-size: 5vw;
+    height: auto;
+    border-radius: 5% 5% 0 0;
+    padding-bottom: 30px;
+  }
+  .footer-rows {
+    padding-top: 15px;
+    flex-direction: column;
+  }
 }
