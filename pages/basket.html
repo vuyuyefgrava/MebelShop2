@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../styles/basket.css" />
     <link rel="stylesheet" href="../styles/modal-window-basket.css" />
     <link rel="stylesheet" href="../styles/button-up.css" />
+    <link rel="stylesheet" href="../styles/renderOrderHistory.css" />
+    <script src="../script/footer.js" defer></script>
     <script src="../script/button-up.js" defer></script>
     <script src="../script/basket.js" defer></script>
     <script
@@ -14,6 +16,7 @@
       defer
     ></script>
     <script src="../script/sendemail.js" defer></script>
+    <script src="../script/renderOrderHistory.js" defer></script>
   </head>
   <body>
     <nav>
@@ -73,6 +76,17 @@
         <button id="sendCartBtn" class="send-btn">Отправить заказ</button>
       </div>
     </div>
+
+    <section id="order-history" style="display: none">
+      <div class="order-history__container">
+        <h2 class="order-history__title">История заказов</h2>
+        <button id="clear-order-history" class="clear-history-btn">
+          Очистить историю
+        </button>
+        <div id="order-list" class="order-history__list"></div>
+      </div>
+    </section>
+
     <button id="scrollToTopBtn" title="Наверх">↑</button>
     <footer class="text">
       <div class="footer-rows">

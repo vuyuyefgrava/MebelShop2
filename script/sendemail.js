@@ -37,16 +37,25 @@ document.addEventListener("DOMContentLoaded", function () {
     emailjs
       .send("service_x8pw2e7", "template_kwa9wp9", params)
       .then(() => {
+        const history = JSON.parse(localStorage.getItem("orderHistory")) || [];
+        cart.forEach((item) => {
+          history.push({
+            title: item.name,
+            price: `${item.price * item.quantity}₽`,
+            time: new Date().toLocaleString(),
+          });
+        });
+        localStorage.setItem("orderHistory", JSON.stringify(history));
+
         alert("Заказ успешно отправлен!");
         closeModal();
-        localStorage.clear('cart');
+        localStorage.removeItem("cart");
         location.reload();
       })
       .catch((error) => {
         console.error(error);
         alert("Ошибка отправки: " + error.text);
       });
-
   });
 });
 
